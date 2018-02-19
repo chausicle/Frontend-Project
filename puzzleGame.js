@@ -7,50 +7,48 @@ function start () {
   let iScreen = document.getElementById('screen');
   let pixel = document.getElementsByClassName('pixel');
   let person = document.getElementsByClassName('fa-user-secret');
-  // let arrayOfPix = [];
 
   // create the pixel grid
-  for (let y = 0; y < 31; y++) {
-    for (let x = 0; x < 16; x++) {
+  let i = 0; // index of pixel class
+  for (let y = 0; y < 16; y++) {
+    for (let x = 0; x < 31; x++, i++) {
       let div = document.createElement('div');
-      // let temp = [];
       div.classList.add('pixel');
-      // div.setAttribute('data-position-x', x);
-      // temp.push(x);
-      // div.setAttribute('data-position-y', y);
-      // temp.push(y);
+      div.setAttribute('data-index', i);
+      div.setAttribute('data-position-x', x);
+      div.setAttribute('data-position-y', y);
       iScreen.appendChild(div);
-      // arrayOfPix.push(temp);
-      // temp = [];
     }
   }
 
   // avatar position
-  console.log('pixel = ', pixel);
-  console.log('pixel[0] = ', pixel[0]);
-  console.log('pixel[0].innerHTML = ', pixel[0].innerHTML);
-  console.log('person = ', person);
-  console.log('person[0] = ', person[0]);
   pixel[0].appendChild(person[0]);
 
   // listen for a keydown on keyboard
-  addEventListener('keydown', (event) => {
-    console.log(event);
-    console.log(event.target);
+  document.addEventListener('keydown', (event) => {
     let whichKey = event.key;
 
     switch (whichKey) {
       case 'ArrowUp':
-        console.log('This key is up');
+        if (Number(person[0].parentNode.dataset.positionY) - 1 >= 0) {
+          pixel[Number(person[0].parentNode.dataset.index) - 31].appendChild(person[0]);
+        }
+        // person[0].parentNode
         break;
       case 'ArrowLeft':
-        console.log('This key is left');
+        if (Number(person[0].parentNode.dataset.positionX) - 1 >= 0) {
+          pixel[Number(person[0].parentNode.dataset.index) - 1].appendChild(person[0]);
+        }
         break;
       case 'ArrowRight':
-        console.log('This key is right');
+        if (Number(person[0].parentNode.dataset.positionX) + 1 < 31) {
+          pixel[Number(person[0].parentNode.dataset.index) + 1].appendChild(person[0]);
+        }
         break;
       case 'ArrowDown':
-        console.log('This key is down');
+        if (Number(person[0].parentNode.dataset.positionY) + 1 < 16) {
+          pixel[Number(person[0].parentNode.dataset.index) + 31].appendChild(person[0]);
+        }
         break;
       default:
         console.log('Not an arrow key');
