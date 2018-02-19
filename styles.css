@@ -27,8 +27,13 @@
 }
 
 .pixel {
-  width: 1em;
-  height: 1em;
+  width: 2em;
+  height: 2em;
   float: left;
   background-color: white;
+  border: 1px solid black
+}
+
+.fa-user-secret {
+  color: black;
 }
