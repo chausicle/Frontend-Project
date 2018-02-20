@@ -14,16 +14,14 @@ nav {
   margin: 2em auto;
   width: 50em;
   height: 50em;
-  border-radius: 1em;
-  /* box-shadow: 0 0 5em 0.5em black; */
+  border-radius: 1em
 }
 
 #info-screen {
   margin: 1em auto;
   width: 20em;
   height: 15em;
-  border-radius: 1em;
-  /* box-shadow: 0 0 5em 0.5em black; */
+  border-radius: 1em
 }
 
 #screen {
@@ -39,6 +37,7 @@ nav {
 }
 
 .fa-user-secret {
+  position: relative;
   color: black;
 }
 
@@ -52,19 +51,19 @@ nav {
 }
 
 #left {
-  /* min-width: 10em; */
+  box-shadow: 0 0 5em 0.5em #5bc0de;
   border-top-left-radius: 1em;
   border-bottom-left-radius: 1em;
 }
 
 #middle {
-  /* min-width: 10em; */
-  flex-wrap: nowrap;
+  text-shadow: 0 0 1.5em #5bc0de;
+  color: #5bc0de;
   margin-top: 1.5em;
 }
 
 #right {
-  /* min-width: 10em; */
+  box-shadow: 0 0 5em 0.5em #5bc0de;
   border-top-right-radius: 1em;
   border-bottom-right-radius: 1em;
 }
