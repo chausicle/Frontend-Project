@@ -1,3 +1,7 @@
+nav {
+  min-width: 1270px;
+}
+
 .borders {
   margin: 2em auto;
   width: 70em;
@@ -36,4 +40,36 @@
 
 .fa-user-secret {
   color: black;
+}
+
+.how-to-play-info {
+  min-width: 1150px;
+}
+
+.break {
+  margin: 5% 0;
+  height: 0.4em;
+}
+
+#left {
+  /* min-width: 10em; */
+  border-top-left-radius: 1em;
+  border-bottom-left-radius: 1em;
+}
+
+#middle {
+  /* min-width: 10em; */
+  flex-wrap: nowrap;
+  margin-top: 1.5em;
+}
+
+#right {
+  /* min-width: 10em; */
+  border-top-right-radius: 1em;
+  border-bottom-right-radius: 1em;
+}
+
+.information {
+  margin: 1em;
+  font-size: 1.3em;
 }
