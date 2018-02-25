@@ -27,36 +27,38 @@ function start () {
   // icons and their data
   placeIcons(pixel, person[0]);
 
-  // avatar position
-  pixel[232].appendChild(person[0]);
-
   // listen for a keydown on keyboard
   document.addEventListener('keydown', (event) => {
     console.log(event);
     let whichKey = event.key;
-    // let personPositionX = Number(person[0].parentNode.dataset.positionX;
-    // let personPositionY = Number(person[0].parentNode.dataset.positionY;
-    // (whichkey !== 66 || whichkey !== 88 || whichkey !== 314 || whichkey !== 336)
 
     switch (whichKey) {
       case 'ArrowUp':
       if (Number(person[0].parentNode.dataset.positionY) - 1 >= 0) {
-        pixel[Number(person[0].parentNode.dataset.index) - 31].appendChild(person[0]);
+        if (notIconIndex(Number(person[0].parentNode.dataset.index), whichKey)) {
+          pixel[Number(person[0].parentNode.dataset.index) - 31].appendChild(person[0]);
+        }
       }
       break;
       case 'ArrowLeft':
       if (Number(person[0].parentNode.dataset.positionX) - 1 >= 0) {
-        pixel[Number(person[0].parentNode.dataset.index) - 1].appendChild(person[0]);
+        if (notIconIndex(Number(person[0].parentNode.dataset.index), whichKey)) {
+          pixel[Number(person[0].parentNode.dataset.index) - 1].appendChild(person[0]);
+        }
       }
       break;
       case 'ArrowRight':
       if (Number(person[0].parentNode.dataset.positionX) + 1 < 31) {
-        pixel[Number(person[0].parentNode.dataset.index) + 1].appendChild(person[0]);
+        if (notIconIndex(Number(person[0].parentNode.dataset.index), whichKey)) {
+          pixel[Number(person[0].parentNode.dataset.index) + 1].appendChild(person[0]);
+        }
       }
       break;
       case 'ArrowDown':
       if (Number(person[0].parentNode.dataset.positionY) + 1 < 16) {
-        pixel[Number(person[0].parentNode.dataset.index) + 31].appendChild(person[0]);
+        if (notIconIndex(Number(person[0].parentNode.dataset.index), whichKey)) {
+          pixel[Number(person[0].parentNode.dataset.index) + 31].appendChild(person[0]);
+        }
       }
       break;
       default:
@@ -68,7 +70,7 @@ function start () {
 function placeIcons (pixel, person) {
   // avatar position
   pixel[232].appendChild(person);
-  // icon and ^ positions
+  // icon and '^' positions
   pixel[66].appendChild(document.getElementsByClassName('fa-chess-pawn')[0]);
   pixel[128].textContent = '^';
   pixel[88].appendChild(document.getElementsByClassName('fa-slack')[0]);
@@ -77,5 +79,21 @@ function placeIcons (pixel, person) {
   pixel[376].textContent = '^';
   pixel[336].appendChild(document.getElementsByClassName('fa-bug')[0]);
   pixel[398].textContent = '^';
+}
 
+function notIconIndex (index, arrow) {
+  // checks if position moved isn't where icon's index is located
+  if (arrow === 'ArrowUp') {
+    if (index - 31 === 66 || index - 31 === 88 || index - 31 === 314 || index - 31 === 336) return false;
+  }
+  else if (arrow === 'ArrowLeft') {
+    if (index - 1 === 66 || index - 1 === 88 || index - 1 === 314 || index - 1 === 336) return false;
+  }
+  else if (arrow === 'ArrowRight') {
+    if (index + 1 === 66 || index + 1 === 88 || index + 1 === 314 || index + 1 === 336) return false;
+  }
+  else if (arrow === 'ArrowDown') {
+    if (index + 31 === 66 || index + 31 === 88 || index + 31 === 314 || index + 31 === 336) return false;
+  }
+  return true;
 }
