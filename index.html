@@ -29,32 +29,42 @@
             <a class="nav-link" href="#">About</a>
           </li>
         </ul>
-        <!-- <form class="form-inline my-2 my-lg-0">
-        <input class="form-control mr-sm-2" type="text" placeholder="Search">
-        <button class="btn btn-secondary my-2 my-sm-0" type="submit">Search</button>
-      </form> -->
       </div>
     </nav>
   </header>
   <body>
     <!-- Play Screen -->
     <div class="container">
-      <div class="row borders text-center">
-        <div id="play-screen" class="col-11 text-center bg-primary">
-          <div class="row">
-            <div id="screen" class="col-12"><i class="fas fa-user-secret fa-lg"></i></div>
+      <div class="row borders">
+        <div id="play-screen" class="col-11 bg-primary">
+          <div class="row text-center">
+            <div id="screen" class="col-12">
+              <!-- icons for the riddle -->
+              <i class="fas fa-user-secret fa-lg" focus></i>
+              <i class="fas fa-chess-pawn fa-3x clues"></i>
+              <i class="fas fa-bug fa-3x clues"></i>
+              <i class="fab fa-slack fa-3x clues"></i>
+              <i class="fas fa-futbol fa-3x clues"></i>
+            </div>
           </div>
+          <!-- Riddles, Partial Answers, and user input -->
           <div class="row">
-            <div id="info-screen" class="col-11 text-center bg-secondary">
+            <div id="info-screen" class="col-11 bg-secondary">
               <div class="row">
                 <div class="col-5">
-                  TESTING
+                  <h5>Riddles:</h5>
+                  <ul>
+                    <li>I move only forward. I take shape of my fallen allies.</li>
+                    <li>Physically, I am needed. Virtually, I am unwanted.</li>
+                    <li>The inanimate part of me is loose. As a person I'm negligent. But there's a part of me that brings a group of bright-minded people closer, to communicate with one another, through using me.</li>
+                    <li>I am two sports in one.</li>
+                  </ul>
                 </div>
                 <div class="col-2">
-                  TESTING
+                  <h5>Partial Answers:</h5>
                 </div>
                 <div class="col-5">
-                  TESTING
+                  <h5>TESTING:</h5>
                 </div>
               </div>
             </div>
@@ -72,10 +82,10 @@
       <div class="row how-to-play-info">
         <ul>
           <li class="information">To move your character, you use the arrow keys: up, down, left, right</li>
-          <li class="information">Move to where the black dots are located under the icons to interact with the clue</li>
-          <li class="information">TEST</li>
-          <li class="information">TEST</li>
-          <li class="information">TEST</li>
+          <li class="information">Move to where the ' ^ ' are located under the icons to interact with the clue</li>
+          <li class="information">Follow the riddles in chronological order to get the full answer</li>
+          <li class="information">Each clue gives you a piece of the answer</li>
+          <li class="information">Once all clues have been found, enter in the password to complete the puzzle</li>
         </ul>
       </div>
     </div>
