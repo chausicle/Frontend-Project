@@ -5,7 +5,7 @@ nav {
 .borders {
   margin: 2em auto;
   width: 70em;
-  height: 54em;
+  height: 60em;
   border-radius: 1em;
   box-shadow: 0 0 5em 0.5em black;
 }
@@ -13,14 +13,14 @@ nav {
 #play-screen {
   margin: 2em auto;
   width: 50em;
-  height: 50em;
+  height: 56em;
   border-radius: 1em
 }
 
 #info-screen {
   margin: 1em auto;
   width: 20em;
-  height: 15em;
+  height: 20em;
   border-radius: 1em
 }
 
@@ -32,13 +32,18 @@ nav {
   width: 2em;
   height: 2em;
   float: left;
-  background-color: white;
-  border: 1px solid black
+  background-color: black;
+  border: 1px solid white;
 }
 
 .fa-user-secret {
   position: relative;
-  color: black;
+  color: #5bc0de;
+}
+
+.clues {
+  filter: blur(5px);
+  position: relative;
 }
 
 .how-to-play-info {
