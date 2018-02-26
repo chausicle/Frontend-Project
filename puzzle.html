@@ -15,7 +15,7 @@
   <header>
     <!-- Navbar -->
     <nav class="navbar navbar-expand-lg navbar-dark bg-primary" style="width: 100%">
-      <a class="navbar-brand" href="#">Puzzle</a>
+      <a class="navbar-brand" href="#">Riddle Puzzle</a>
       <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarColor01" aria-controls="navbarColor01" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
       </button>
@@ -41,30 +41,63 @@
             <div id="screen" class="col-12">
               <!-- icons for the riddle -->
               <i class="fas fa-user-secret fa-lg" focus></i>
-              <i class="fas fa-chess-pawn fa-3x clues"></i>
-              <i class="fas fa-bug fa-3x clues"></i>
-              <i class="fab fa-slack fa-3x clues"></i>
-              <i class="fas fa-futbol fa-3x clues"></i>
+              <i class="fas fa-lock fa-7x"></i>
+              <i class="fas fa-chess-pawn fa-4x clues"></i>
+              <i class="fas fa-bug fa-4x clues"></i>
+              <i class="fab fa-slack fa-4x clues"></i>
+              <i class="fas fa-futbol fa-4x clues"></i>
             </div>
           </div>
           <!-- Riddles, Partial Answers, and user input -->
           <div class="row">
             <div id="info-screen" class="col-11 bg-secondary">
-              <div class="row">
+              <div class="row" style="padding-top: 1.5em;">
                 <div class="col-5">
                   <h5>Riddles:</h5>
-                  <ul>
+                  <ol>
                     <li>I move only forward. I take shape of my fallen allies.</li>
                     <li>Physically, I am needed. Virtually, I am unwanted.</li>
                     <li>The inanimate part of me is loose. As a person I'm negligent. But there's a part of me that brings a group of bright-minded people closer, to communicate with one another, through using me.</li>
                     <li>I am two sports in one.</li>
-                  </ul>
+                  </ol>
                 </div>
-                <div class="col-2">
-                  <h5>Partial Answers:</h5>
+                <div class="col-3">
+                  <h5>Partial Passwords:</h5>
+                  <ol>
+                    <li>
+                      <input id="pass1" class="answer" type="text" value="" disabled="" hidden>
+                    </li>
+                    <li>
+                      <input id="pass2" class="answer" type="text" value="" disabled="" hidden>
+                    </li>
+                    <li>
+                      <input id="pass3" class="answer" type="text" value="" disabled="" hidden>
+                    </li>
+                    <li>
+                      <input id="pass4" class="answer" type="text" value="" disabled="" hidden>
+                    </li>
+                  </ol>
                 </div>
-                <div class="col-5">
-                  <h5>TESTING:</h5>
+                <div class="col-3">
+                  <h5>Your Guess:</h5>
+                  <ol>
+                    <li>
+                      <input id="128" class="answer" type="text" value="" style="width: 6em;" hidden>
+                      <button class="btn-info" type="button" name="button" hidden>Submit</button>
+                    </li>
+                    <li>
+                      <input id="150" class="answer" type="text" value="" style="width: 6em;" hidden>
+                      <button class="btn-info" type="button" name="button" hidden>Submit</button>
+                    </li>
+                    <li>
+                      <input id="376" class="answer" type="text" value="" style="width: 6em;" hidden>
+                      <button class="btn-info" type="button" name="button" hidden>Submit</button>
+                    </li>
+                    <li>
+                      <input id="398" class="answer" type="text" value="" style="width: 6em;" hidden>
+                      <button class="btn-info" type="button" name="button" hidden>Submit</button>
+                    </li>
+                  </ol>
                 </div>
               </div>
             </div>
@@ -86,7 +119,16 @@
           <li class="information">Follow the riddles in chronological order to get the full answer</li>
           <li class="information">Each clue gives you a piece of the answer</li>
           <li class="information">Once all clues have been found, enter in the password to complete the puzzle</li>
+          <li class="information">Move to where the ' ? 'is located under the lock icon to input the final password</li>
         </ul>
+      </div>
+      <!-- final password -->
+      <div class="password" hidden>
+        <form id="secret">
+          <h1 class="h3 mb-3 font-weight-normal">Please sign-in</h1>
+          <input type="text" id="secret-password" class="form-control" placeholder="Password" required="">
+          <button class="btn btn-lg btn-primary btn-block" type="submit">Sign in</button>
+        </form>
       </div>
     </div>
   </body>

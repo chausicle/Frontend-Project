@@ -25,6 +25,8 @@ nav {
 }
 
 #screen {
+  filter: blur(0);
+  opacity: 1;
   margin-top: 1em;
 }
 
@@ -33,7 +35,7 @@ nav {
   height: 2em;
   float: left;
   background-color: black;
-  border: 1px solid white;
+  /* border: 1px solid white; */
 }
 
 .fa-user-secret {
@@ -41,9 +43,32 @@ nav {
   color: #5bc0de;
 }
 
-.clues {
-  filter: blur(4px);
+.fa-lock {
+  margin: -85px;
   position: relative;
+}
+
+.clues {
+  margin: -40px;
+  filter: blur(6px);
+  position: relative;
+}
+
+.answer {
+  margin: auto;
+}
+
+.password {
+  width: 20em;
+  height: 10em;
+  position: absolute;
+  bottom: 33em;
+  left: 34em;
+}
+
+#secret {
+  margin: auto;
+  width: 15em;
 }
 
 .how-to-play-info {
