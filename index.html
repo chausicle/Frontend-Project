@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Log-in: Frontend Project - Web Puzzle</title>
+    <!-- Superhero Bootstrap Theme -->
+    <link href="https://maxcdn.bootstrapcdn.com/bootswatch/4.0.0-beta.3/superhero/bootstrap.min.css" rel="stylesheet" integrity="sha384-5wAMKUlGYMj+I1P0kUCCwryZKMvv4S6K2e0UlixY5YK3Z4/HWKP9MtELCm0Iyo74" crossorigin="anonymous">
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="stylesheet/loginStyles.css">
+    <!-- javascript -->
+    <script type="text/javascript" src="login.js"></script>
+    <!-- <script type="text/javascript" src="puzzleGame.js"></script> -->
+    <script defer src="https://use.fontawesome.com/releases/v5.0.6/js/all.js"></script>
+  </head>
+  <body class="text-center">
+    <h1>Welcome to the Riddle Puzzle Game!</h1>
+    <form class="form-signin">
+      <i class="mb-4 fas fa-user-secret fa-5x"></i>
+      <h1 class="h3 mb-3 font-weight-normal">Please sign-in</h1>
+      <label for="inputEmail" class="sr-only">Email address</label>
+      <input type="email" id="inputEmail" class="form-control" placeholder="Email address" required="" autofocus="">
+      <label for="inputBirth" class="sr-only">Birth Date</label>
+      <input type="text" id="inputBirth" class="form-control" placeholder="Birth-Date(i.e. 08-06-1994)" required="">
+      <div class="checkbox mb-3">
+        <label>
+          <input type="checkbox" id="remember" value="remember-me"> Remember me
+        </label>
+      </div>
+      <button class="btn btn-lg btn-primary btn-block" type="submit">Sign in</button>
+    </form>
+  </body>
+</html>
