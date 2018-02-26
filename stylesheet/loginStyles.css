@@ -1,0 +1,24 @@
+.form-signin {
+  width: 100%;
+  max-width: 330px;
+  padding: 15px;
+  margin: 0 auto;
+}
+
+.fa-user-secret {
+  color: #5bc0de
+}
+
+#inputEmail {
+  border-top-left-radius: 0.4em;
+  border-top-right-radius: 0.4em;
+}
+
+#inputBirth {
+  border-bottom-left-radius: 0.4em;
+  border-bottom-right-radius: 0.4em;
+}
+
+.btn {
+  border-radius: 0.4em;
+}

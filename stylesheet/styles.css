@@ -1,0 +1,79 @@
+nav {
+  min-width: 1270px;
+}
+
+.borders {
+  margin: 2em auto;
+  width: 70em;
+  height: 60em;
+  border-radius: 1em;
+  box-shadow: 0 0 5em 0.5em black;
+}
+
+#play-screen {
+  margin: 2em auto;
+  width: 50em;
+  height: 56em;
+  border-radius: 1em
+}
+
+#info-screen {
+  margin: 1em auto;
+  width: 20em;
+  height: 20em;
+  border-radius: 1em
+}
+
+#screen {
+  margin-top: 1em;
+}
+
+.pixel {
+  width: 2em;
+  height: 2em;
+  float: left;
+  background-color: black;
+  border: 1px solid white;
+}
+
+.fa-user-secret {
+  position: relative;
+  color: #5bc0de;
+}
+
+.clues {
+  filter: blur(4px);
+  position: relative;
+}
+
+.how-to-play-info {
+  min-width: 1150px;
+}
+
+.break {
+  margin: 5% 0;
+  height: 0.4em;
+}
+
+#left {
+  box-shadow: 0 0 5em 0.5em #5bc0de;
+  border-top-left-radius: 1em;
+  border-bottom-left-radius: 1em;
+}
+
+#middle {
+  text-shadow: 0 0 1.5em #5bc0de;
+  color: #5bc0de;
+  margin-top: 1.5em;
+}
+
+#right {
+  box-shadow: 0 0 5em 0.5em #5bc0de;
+  border-top-right-radius: 1em;
+  border-bottom-right-radius: 1em;
+}
+
+.information {
+  margin: 1em;
+  font-size: 1.3em;
+}
