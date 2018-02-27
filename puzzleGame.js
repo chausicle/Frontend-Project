@@ -76,6 +76,8 @@ function start() {
       default:
       console.log('Not an arrow key');
     }
+
+
   });
 }
 
@@ -156,6 +158,8 @@ function carrotOrQuestionIndex(personIndex) {
   let guess2 = document.getElementById('150');
   let guess3 = document.getElementById('376');
   let guess4 = document.getElementById('398');
+  let form = document.querySelector('.partial');
+  // let button = document.getElementById('128')
 
   if (personIndex === 139) {
     // un-blur screen when in index
@@ -175,6 +179,11 @@ function carrotOrQuestionIndex(personIndex) {
   if (personIndex === 128) {
     guess1.hidden = false;
     guess1.nextElementSibling.hidden = false;
+    console.log(form);
+    guess1.nextElementSibling.addEventListener('click', (event) => {
+      event.preventDefault();
+      console.log(event);
+    })
   } else {
     guess1.hidden = true;
     guess1.nextElementSibling.hidden = true;
