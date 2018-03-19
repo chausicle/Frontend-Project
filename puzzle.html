@@ -82,22 +82,28 @@
                   <h5>Your Guess:</h5>
                   <ol>
                     <li>
-                      <form class="partial" action="index.html" method="post">
+                      <form class="partial">
                         <input id="128" class="answer" type="text" value="" style="width: 6em;" hidden>
-                        <button class="btn-info" type="button" name="128" hidden>Submit</button>
+                        <button class="btn-info" type="submit" name="128" hidden>Submit</button>
                       </form>
                     </li>
                     <li>
-                      <input id="150" class="answer" type="text" value="" style="width: 6em;" hidden>
-                      <button class="btn-info" type="button" name="button" hidden>Submit</button>
+                      <form class="partial">
+                        <input id="398" class="answer" type="text" value="" style="width: 6em;" hidden>
+                        <button class="btn-info" type="submit" name="button" hidden>Submit</button>
+                      </form>
                     </li>
                     <li>
-                      <input id="376" class="answer" type="text" value="" style="width: 6em;" hidden>
-                      <button class="btn-info" type="button" name="button" hidden>Submit</button>
+                      <form class="partial">
+                        <input id="150" class="answer" type="text" value="" style="width: 6em;" hidden>
+                        <button class="btn-info" type="submit" name="button" hidden>Submit</button>
+                      </form>
                     </li>
                     <li>
-                      <input id="398" class="answer" type="text" value="" style="width: 6em;" hidden>
-                      <button class="btn-info" type="button" name="button" hidden>Submit</button>
+                      <form class="partial">
+                        <input id="376" class="answer" type="text" value="" style="width: 6em;" hidden>
+                        <button class="btn-info" type="submit" name="button" hidden>Submit</button>
+                      </form>
                     </li>
                   </ol>
                 </div>
@@ -127,9 +133,9 @@
       <!-- final password -->
       <div class="password" hidden>
         <form id="secret">
-          <h1 class="h3 mb-3 font-weight-normal">Please sign-in</h1>
-          <input type="text" id="secret-password" class="form-control" placeholder="Password" required="">
-          <button class="btn btn-lg btn-primary btn-block" type="submit">Sign in</button>
+          <h1 class="h3 mb-3 font-weight-normal">Enter Final Password</h1>
+          <input type="password" id="secret-password" class="form-control" placeholder="Password" value="" requirerd>
+          <button class="btn btn-lg btn-primary btn-block" type="submit">Submit</button>
         </form>
       </div>
     </div>

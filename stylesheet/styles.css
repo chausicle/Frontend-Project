@@ -61,9 +61,9 @@ nav {
 .password {
   width: 20em;
   height: 10em;
-  position: absolute;
-  bottom: 33em;
-  left: 50em;
+  position: relative;
+  bottom: 77em;
+  left: 25em;
 }
 
 #secret {

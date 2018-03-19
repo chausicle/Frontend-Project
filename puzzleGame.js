@@ -7,6 +7,10 @@ function start() {
   let infoScreen = document.getElementById('screen');
   let pixel = document.getElementsByClassName('pixel');
   let person = document.getElementsByClassName('fa-user-secret');
+  let guess1 = document.getElementById('128');
+  let guess2 = document.getElementById('150');
+  let guess3 = document.getElementById('376');
+  let guess4 = document.getElementById('398');
   let password = makePassword();
 
 
@@ -34,51 +38,76 @@ function start() {
 
     switch (whichKey) {
       case 'ArrowUp':
-      // check if the move isn't out of y-axis on top of screen
-      if (Number(person[0].parentNode.dataset.positionY) - 1 >= 0) {
-        // check if the move isn't in the the icon index
-        if (notIconIndex(Number(person[0].parentNode.dataset.index), whichKey)) {
-          pixel[Number(person[0].parentNode.dataset.index) - 31].appendChild(person[0]);
-          carrotOrQuestionIndex(Number(person[0].parentNode.dataset.index));
+        // check if the move isn't out of y-axis on top of screen
+        if (Number(person[0].parentNode.dataset.positionY) - 1 >= 0) {
+          // check if the move isn't in the the icon index
+          if (notIconIndex(Number(person[0].parentNode.dataset.index), whichKey)) {
+            pixel[Number(person[0].parentNode.dataset.index) - 31].appendChild(person[0]);
+            carrotOrQuestionIndex(Number(person[0].parentNode.dataset.index));
+          }
         }
-      }
-      break;
+        break;
       case 'ArrowLeft':
-      // check if the move isn't out of x-axis on left of screen
-      if (Number(person[0].parentNode.dataset.positionX) - 1 >= 0) {
-        // check if the move isn't in the the icon index
-        if (notIconIndex(Number(person[0].parentNode.dataset.index), whichKey)) {
-          pixel[Number(person[0].parentNode.dataset.index) - 1].appendChild(person[0]);
-          carrotOrQuestionIndex(Number(person[0].parentNode.dataset.index));
+        // check if the move isn't out of x-axis on left of screen
+        if (Number(person[0].parentNode.dataset.positionX) - 1 >= 0) {
+          // check if the move isn't in the the icon index
+          if (notIconIndex(Number(person[0].parentNode.dataset.index), whichKey)) {
+            pixel[Number(person[0].parentNode.dataset.index) - 1].appendChild(person[0]);
+            carrotOrQuestionIndex(Number(person[0].parentNode.dataset.index));
+          }
         }
-      }
-      break;
+        break;
       case 'ArrowRight':
-      // check if the move isn't out of y-axis on right of screen
-      if (Number(person[0].parentNode.dataset.positionX) + 1 < 31) {
-        // check if the move isn't in the the icon index
-        if (notIconIndex(Number(person[0].parentNode.dataset.index), whichKey)) {
-          pixel[Number(person[0].parentNode.dataset.index) + 1].appendChild(person[0]);
-          carrotOrQuestionIndex(Number(person[0].parentNode.dataset.index));
+        // check if the move isn't out of y-axis on right of screen
+        if (Number(person[0].parentNode.dataset.positionX) + 1 < 31) {
+          // check if the move isn't in the the icon index
+          if (notIconIndex(Number(person[0].parentNode.dataset.index), whichKey)) {
+            pixel[Number(person[0].parentNode.dataset.index) + 1].appendChild(person[0]);
+            carrotOrQuestionIndex(Number(person[0].parentNode.dataset.index));
+          }
         }
-      }
-      break;
+        break;
       case 'ArrowDown':
-      // check if the move isn't out of y-axis on bottom of screen
-      if (Number(person[0].parentNode.dataset.positionY) + 1 < 16) {
-        // check if the move isn't in the the icon index
-        if (notIconIndex(Number(person[0].parentNode.dataset.index), whichKey)) {
-          pixel[Number(person[0].parentNode.dataset.index) + 31].appendChild(person[0]);
-          carrotOrQuestionIndex(Number(person[0].parentNode.dataset.index));
+        // check if the move isn't out of y-axis on bottom of screen
+        if (Number(person[0].parentNode.dataset.positionY) + 1 < 16) {
+          // check if the move isn't in the the icon index
+          if (notIconIndex(Number(person[0].parentNode.dataset.index), whichKey)) {
+            pixel[Number(person[0].parentNode.dataset.index) + 31].appendChild(person[0]);
+            carrotOrQuestionIndex(Number(person[0].parentNode.dataset.index));
+          }
         }
-      }
-      break;
+        break;
       default:
       console.log('Not an arrow key');
     }
-
-
   });
+
+  // check if guess is correct
+  document.addEventListener('submit', (event) => {
+    event.preventDefault();
+    // event.target[0].value = event.target[0].value;
+    console.log(event.target[0].id);
+    console.log(event.target[0].value);
+    if (Number(event.target[0].id) === 128 && event.target[0].value === 'pawn') {
+      document.getElementsByClassName('fa-chess-pawn')[0].style.filter = 'blur(0)';
+      document.querySelector('#pass1').hidden = false;
+    } else if (Number(event.target[0].id) === 150 && event.target[0].value === 'slack') {
+      document.getElementsByClassName('fa-slack')[0].style.filter = 'blur(0)';
+      document.querySelector('#pass3').hidden = false;
+    } else if (Number(event.target[0].id) === 376 && event.target[0].value === 'football') {
+      document.getElementsByClassName('fa-futbol')[0].style.filter = 'blur(0)';
+      document.querySelector('#pass4').hidden = false;
+    } else if (Number(event.target[0].id) === 398 && event.target[0].value === 'bug') {
+      document.getElementsByClassName('fa-bug')[0].style.filter = 'blur(0)';
+      document.querySelector('#pass2').hidden = false;
+    } else if (event.target[0].id === 'secret-password' && event.target[0].value === JSON.parse(localStorage.getItem('USERS_SAVED')).password) {
+      let user = JSON.parse(localStorage.getItem('USERS_SAVED'))
+      user.passed = true;
+      localStorage.setItem('USERS_SAVED', JSON.stringify(user));
+      document.location = 'index.html'
+    }
+
+  })
 }
 
 function placeIcons(pixel, person) {
@@ -155,9 +184,9 @@ function carrotOrQuestionIndex(personIndex) {
   let passWindow = document.getElementsByClassName('password')
   // let secretPass = document.getElementById('secret');
   let guess1 = document.getElementById('128');
-  let guess2 = document.getElementById('150');
-  let guess3 = document.getElementById('376');
-  let guess4 = document.getElementById('398');
+  let guess2 = document.getElementById('398');
+  let guess3 = document.getElementById('150');
+  let guess4 = document.getElementById('376');
   let form = document.querySelector('.partial');
   // let button = document.getElementById('128')
 
@@ -179,30 +208,26 @@ function carrotOrQuestionIndex(personIndex) {
   if (personIndex === 128) {
     guess1.hidden = false;
     guess1.nextElementSibling.hidden = false;
-    console.log(form);
-    guess1.nextElementSibling.addEventListener('click', (event) => {
-      event.preventDefault();
-      console.log(event);
-    })
+
   } else {
     guess1.hidden = true;
     guess1.nextElementSibling.hidden = true;
   }
-  if (personIndex === 150) {
+  if (personIndex === 398) {
     guess2.hidden = false;
     guess2.nextElementSibling.hidden = false;
   } else {
     guess2.hidden = true;
     guess2.nextElementSibling.hidden = true;
   }
-  if (personIndex === 376) {
+  if (personIndex === 150) {
     guess3.hidden = false;
     guess3.nextElementSibling.hidden = false;
   } else {
     guess3.hidden = true;
     guess3.nextElementSibling.hidden = true;
   }
-  if (personIndex === 398) {
+  if (personIndex === 376) {
     guess4.hidden = false;
     guess4.nextElementSibling.hidden = false;
   } else {

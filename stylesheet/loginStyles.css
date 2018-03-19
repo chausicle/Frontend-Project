@@ -5,7 +5,7 @@
   margin: 10% auto;
 }
 
-.fa-user-secret {
+.fa-user-secret, .fa-lock-open {
   color: #5bc0de
 }
 
